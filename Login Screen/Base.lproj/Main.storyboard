@@ -120,7 +120,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Register View Controller-->
+        <!--Text Field Validation Delegate-->
         <scene sceneID="3lo-rl-DjU">
             <objects>
                 <viewController id="h6J-wa-QTJ" customClass="RegisterViewController" customModule="Login_Screen" customModuleProvider="target" sceneMemberID="viewController">
@@ -146,22 +146,24 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A9p-7E-Hgd">
                                                         <rect key="frame" x="0.0" y="26.000000000000014" width="327" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Johnny" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h59-hT-TIZ">
+                                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Johnny" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h59-hT-TIZ" customClass="ValidationTextField" customModule="Login_Screen" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
                                                                 <connections>
-                                                                    <outlet property="delegate" destination="h6J-wa-QTJ" id="k0E-3Y-gcY"/>
+                                                                    <outlet property="nextResponderToBecomeResponder" destination="x20-8o-nT5" id="IgO-Lw-A2D"/>
+                                                                    <outlet property="textFieldValidationDelegate" destination="h6J-wa-QTJ" id="mTM-NE-4ii"/>
                                                                 </connections>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Appleseed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x20-8o-nT5">
+                                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Appleseed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x20-8o-nT5" customClass="ValidationTextField" customModule="Login_Screen" customModuleProvider="target">
                                                                 <rect key="frame" x="167.66666666666663" y="0.0" width="159.33333333333337" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="given-name"/>
                                                                 <connections>
-                                                                    <outlet property="delegate" destination="h6J-wa-QTJ" id="Kp2-Xz-UJA"/>
+                                                                    <outlet property="nextResponderToBecomeResponder" destination="DzV-lP-JME" id="i9P-2l-hOi"/>
+                                                                    <outlet property="textFieldValidationDelegate" destination="h6J-wa-QTJ" id="vOS-vK-GVr"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
@@ -177,13 +179,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John_Appleseed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DzV-lP-JME">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John_Appleseed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DzV-lP-JME" customClass="ValidationTextField" customModule="Login_Screen" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="26" width="327" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="h6J-wa-QTJ" id="qdY-M5-gcc"/>
+                                                            <outlet property="nextResponderToBecomeResponder" destination="s4E-Eh-31T" id="HqE-IZ-xak"/>
+                                                            <outlet property="textFieldValidationDelegate" destination="h6J-wa-QTJ" id="TC5-RF-KOc"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -212,13 +215,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4M-D4-qzR">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4M-D4-qzR" customClass="ValidationTextField" customModule="Login_Screen" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="26" width="327" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="h6J-wa-QTJ" id="eQR-Fq-YG2"/>
+                                                            <outlet property="nextResponderToBecomeResponder" destination="9yq-LK-8lA" id="5fF-7C-4yi"/>
+                                                            <outlet property="textFieldValidationDelegate" destination="h6J-wa-QTJ" id="oKv-Nt-CHn"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -232,13 +236,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9yq-LK-8lA">
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9yq-LK-8lA" customClass="ValidationTextField" customModule="Login_Screen" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="26" width="327" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="h6J-wa-QTJ" id="Jkb-JT-9pf"/>
+                                                            <outlet property="textFieldValidationDelegate" destination="h6J-wa-QTJ" id="0pg-Ep-9oa"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>

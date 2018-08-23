@@ -13,6 +13,8 @@
 		E93D0842212D072E00AEC9B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93D0841212D072E00AEC9B4 /* Assets.xcassets */; };
 		E93D0845212D072E00AEC9B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93D0843212D072E00AEC9B4 /* LaunchScreen.storyboard */; };
 		E93D084D212D11C400AEC9B4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93D084C212D11C400AEC9B4 /* RegisterViewController.swift */; };
+		E93D084F212D12DA00AEC9B4 /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93D084E212D12DA00AEC9B4 /* ValidationTextField.swift */; };
+		E93D0851212D136400AEC9B4 /* UIValidatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93D0850212D136400AEC9B4 /* UIValidatedTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		E93D0844212D072E00AEC9B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E93D0846212D072E00AEC9B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E93D084C212D11C400AEC9B4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E93D084E212D12DA00AEC9B4 /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
+		E93D0850212D136400AEC9B4 /* UIValidatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIValidatedTextField.swift; path = "../../../../../My Projects/Assigned/Universal iOS/Assigned/Assigned/UIValidatedTextField.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				E93D083A212D072B00AEC9B4 /* AppDelegate.swift */,
 				E93D083C212D072B00AEC9B4 /* LoginViewController.swift */,
 				E93D084C212D11C400AEC9B4 /* RegisterViewController.swift */,
+				E93D084E212D12DA00AEC9B4 /* ValidationTextField.swift */,
+				E93D0850212D136400AEC9B4 /* UIValidatedTextField.swift */,
 				E93D083E212D072B00AEC9B4 /* Main.storyboard */,
 				E93D0841212D072E00AEC9B4 /* Assets.xcassets */,
 				E93D0843212D072E00AEC9B4 /* LaunchScreen.storyboard */,
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E93D084F212D12DA00AEC9B4 /* ValidationTextField.swift in Sources */,
 				E93D084D212D11C400AEC9B4 /* RegisterViewController.swift in Sources */,
 				E93D083D212D072B00AEC9B4 /* LoginViewController.swift in Sources */,
+				E93D0851212D136400AEC9B4 /* UIValidatedTextField.swift in Sources */,
 				E93D083B212D072B00AEC9B4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
