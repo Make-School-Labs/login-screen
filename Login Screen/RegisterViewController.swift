@@ -42,7 +42,10 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var buttonBirthdate: UIButton!
     @IBAction func pressBirthday(_ sender: Any) {
-        let datePickerVc = DatePickerViewController.newViewController(header: "Birthday", subheader: "select your birthday")
+        let datePickerVc = DatePickerViewController.newViewController(
+            header: "Birthday",
+            subheader: "select your birthday"
+        )
         datePickerVc.delegate = self
         
         let now = Date()
@@ -51,7 +54,7 @@ class RegisterViewController: UIViewController {
         present(datePickerVc, animated: true)
     }
     
-    @IBOutlet weak var textFieldPassword:  ValidationTextField! {
+    @IBOutlet weak var textFieldPassword: ValidationTextField! {
         didSet {
             textFieldPassword.resultValidations = [
                 ValidationTextField.Validations.length(rangingFrom: 6, to: 20)
@@ -59,7 +62,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var textFieldPasswordConfirm:  ValidationTextField!
+    @IBOutlet weak var textFieldPasswordConfirm: ValidationTextField!
     
     @IBAction func pressRegister(_ sender: Any) {
         
@@ -112,5 +115,3 @@ extension RegisterViewController: DatePickerViewControllerDelegate {
         dismiss(animated: true)
     }
 }
-
-

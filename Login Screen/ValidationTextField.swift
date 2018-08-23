@@ -17,7 +17,6 @@ class ValidationTextField: UITextField {
             return textValue.isEmpty == false
         }
         
-        //TODO: Numbers only, text only, etc
         static var all: StringValidation = { textValue in
             return true
         }
@@ -120,7 +119,6 @@ class ValidationTextField: UITextField {
         layer.borderWidth = 0
     }
     
-    
 }
 
 extension ValidationTextField: UITextFieldDelegate {
@@ -156,7 +154,10 @@ extension ValidationTextField: UITextFieldDelegate {
         textFieldValidationDelegate?.textFieldDidBeginEditing?(textField)
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String) -> Bool {
         return inputValidation?(string) ?? true
     }
     
@@ -166,4 +167,3 @@ extension ValidationTextField: UITextFieldDelegate {
         textFieldValidationDelegate?.textFieldDidEndEditing?(textField)
     }
 }
-
