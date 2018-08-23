@@ -9,7 +9,16 @@
 import UIKit
 
 protocol DatePickerViewControllerDelegate: class {
-    func datePicker(_ datePickerViewController: DatePickerViewController, didFinishWith selecteDate: Date)
+    func datePicker(
+        _ datePickerViewController: DatePickerViewController,
+        didFinishWith selecteDate: Date
+    )
+    
+    func datePicker(
+        _ datePickerViewController: DatePickerViewController,
+        canSelect
+        date: Date
+        ) -> (success: Bool, message: String)
 }
 
 class DatePickerViewController: UIViewController {
@@ -17,6 +26,7 @@ class DatePickerViewController: UIViewController {
     weak var delegate: DatePickerViewControllerDelegate?
     
     var minDate: Date?
+    var selectedDate: Date = Date()
     var maxDate: Date?
     
     private(set) var header: String = "Date Picker"
@@ -48,7 +58,23 @@ class DatePickerViewController: UIViewController {
     }
     
     @IBAction func pressDone(_ sender: Any) {
-        delegate?.datePicker(self, didFinishWith: datePicker.date)
+        guard let delegate = self.delegate else { return }
+        
+        let validSelectedDate = delegate.datePicker(self, canSelect: datePicker.date)
+        if validSelectedDate.success {
+            delegate.datePicker(self, didFinishWith: datePicker.date)
+        } else {
+            let dateInvalidAlert = UIAlertController(
+                title: self.header,
+                message: validSelectedDate.message,
+                preferredStyle: .alert
+            )
+            
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .default)
+            dateInvalidAlert.addAction(dismissAction)
+            
+            present(dateInvalidAlert, animated: true)
+        }
     }
     
     override func viewDidLoad() {
@@ -58,6 +84,7 @@ class DatePickerViewController: UIViewController {
         labelSubheading.text = subheader
         
         datePicker.minimumDate = minDate
+        datePicker.date = selectedDate
         datePicker.maximumDate = maxDate
         
         viewContainer.layer.cornerRadius = 8.0

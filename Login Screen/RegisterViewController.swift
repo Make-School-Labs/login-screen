@@ -10,10 +10,16 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    lazy var keyboardHelper = KeyboardHelper(delegate: self)
+    
     var selectedBirthday: Date?
     
     func registerNewUser(firstName: String, lastName: String, birthday: Date, password: String) {
         //TODO: register the user here
+    }
+    
+    @IBAction func tapToDismissKeyboard(_ sender: Any) {
+        view.endEditing(false)
     }
     
     @IBOutlet weak var textFieldFirstName: ValidationTextField! {
@@ -50,6 +56,10 @@ class RegisterViewController: UIViewController {
         
         let now = Date()
         datePickerVc.maxDate = now
+        
+        if let selectedDate = self.selectedBirthday {
+            datePickerVc.selectedDate = selectedDate
+        }
         
         present(datePickerVc, animated: true)
     }
@@ -102,6 +112,14 @@ class RegisterViewController: UIViewController {
             ValidationTextField.Validations.length(rangingFrom: 6, to: 20),
             ValidationTextField.Validations.equal(to: textFieldPassword)
         ]
+        
+        _ = keyboardHelper
+    }
+}
+
+extension RegisterViewController: KeyboardHelperDelegate {
+    func keyboardHelper(_ keyboardHelper: KeyboardHelper, didChangeKeyboardTo newPosition: CGFloat) {
+        view.frame.origin.y = newPosition
     }
 }
 
@@ -113,5 +131,19 @@ extension RegisterViewController: DatePickerViewControllerDelegate {
         buttonBirthdate.setTitle(birthdayString, for: .normal)
         
         dismiss(animated: true)
+    }
+    
+    func datePicker(
+        _ datePickerViewController: DatePickerViewController,
+        canSelect date: Date
+        ) -> (success: Bool, message: String) {
+        let secondsSinceSelectedDate = Date().timeIntervalSince(date)
+        let seconds18YearsAgo: TimeInterval = 60 * 60 * 24 * 356 * 18
+        
+        if secondsSinceSelectedDate >= seconds18YearsAgo {
+            return (true, "")
+        } else {
+            return (false, "you cannot register being yonger than 18 years of age")
+        }
     }
 }

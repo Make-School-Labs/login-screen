@@ -17,6 +17,7 @@
 		E94A5E22212E626C008B4E91 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A5E21212E626C008B4E91 /* DatePickerViewController.swift */; };
 		E94A5E24212E629D008B4E91 /* DatePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E94A5E23212E629D008B4E91 /* DatePickerViewController.storyboard */; };
 		E94A5E26212E699C008B4E91 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A5E25212E699C008B4E91 /* Date+String.swift */; };
+		E94A5E29212E74EE008B4E91 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A5E28212E74EE008B4E91 /* KeyboardHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E94A5E21212E626C008B4E91 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		E94A5E23212E629D008B4E91 /* DatePickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatePickerViewController.storyboard; sourceTree = "<group>"; };
 		E94A5E25212E699C008B4E91 /* Date+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		E94A5E28212E74EE008B4E91 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				E93D083A212D072B00AEC9B4 /* AppDelegate.swift */,
 				E93D083C212D072B00AEC9B4 /* LoginViewController.swift */,
 				E93D084C212D11C400AEC9B4 /* RegisterViewController.swift */,
+				E94A5E28212E74EE008B4E91 /* KeyboardHelper.swift */,
 				E93D084E212D12DA00AEC9B4 /* ValidationTextField.swift */,
 				E94A5E21212E626C008B4E91 /* DatePickerViewController.swift */,
 				E94A5E23212E629D008B4E91 /* DatePickerViewController.storyboard */,
@@ -171,6 +174,7 @@
 			files = (
 				E93D084F212D12DA00AEC9B4 /* ValidationTextField.swift in Sources */,
 				E94A5E22212E626C008B4E91 /* DatePickerViewController.swift in Sources */,
+				E94A5E29212E74EE008B4E91 /* KeyboardHelper.swift in Sources */,
 				E94A5E26212E699C008B4E91 /* Date+String.swift in Sources */,
 				E93D084D212D11C400AEC9B4 /* RegisterViewController.swift in Sources */,
 				E93D083D212D072B00AEC9B4 /* LoginViewController.swift in Sources */,

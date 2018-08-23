@@ -10,8 +10,20 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var textFieldUsername: UITextField!
-    @IBOutlet weak var textFieldPassword: UITextField!
+    @IBOutlet weak var textFieldUsername: ValidationTextField! {
+        didSet {
+            textFieldUsername.resultValidations = [
+                ValidationTextField.Validations.length(rangingFrom: 6, to: 20)
+            ]
+        }
+    }
+    @IBOutlet weak var textFieldPassword: ValidationTextField! {
+        didSet {
+            textFieldPassword.resultValidations = [
+                ValidationTextField.Validations.length(rangingFrom: 6, to: 20)
+            ]
+        }
+    }
     
     @IBAction func pressLogin(_ sender: Any) {
         
