@@ -14,7 +14,9 @@
 		E93D0845212D072E00AEC9B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93D0843212D072E00AEC9B4 /* LaunchScreen.storyboard */; };
 		E93D084D212D11C400AEC9B4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93D084C212D11C400AEC9B4 /* RegisterViewController.swift */; };
 		E93D084F212D12DA00AEC9B4 /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93D084E212D12DA00AEC9B4 /* ValidationTextField.swift */; };
-		E93D0851212D136400AEC9B4 /* UIValidatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93D0850212D136400AEC9B4 /* UIValidatedTextField.swift */; };
+		E94A5E22212E626C008B4E91 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A5E21212E626C008B4E91 /* DatePickerViewController.swift */; };
+		E94A5E24212E629D008B4E91 /* DatePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E94A5E23212E629D008B4E91 /* DatePickerViewController.storyboard */; };
+		E94A5E26212E699C008B4E91 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94A5E25212E699C008B4E91 /* Date+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		E93D0846212D072E00AEC9B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E93D084C212D11C400AEC9B4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E93D084E212D12DA00AEC9B4 /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
-		E93D0850212D136400AEC9B4 /* UIValidatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIValidatedTextField.swift; path = "../../../../../My Projects/Assigned/Universal iOS/Assigned/Assigned/UIValidatedTextField.swift"; sourceTree = "<group>"; };
+		E94A5E21212E626C008B4E91 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		E94A5E23212E629D008B4E91 /* DatePickerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatePickerViewController.storyboard; sourceTree = "<group>"; };
+		E94A5E25212E699C008B4E91 /* Date+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,9 @@
 				E93D083C212D072B00AEC9B4 /* LoginViewController.swift */,
 				E93D084C212D11C400AEC9B4 /* RegisterViewController.swift */,
 				E93D084E212D12DA00AEC9B4 /* ValidationTextField.swift */,
-				E93D0850212D136400AEC9B4 /* UIValidatedTextField.swift */,
+				E94A5E21212E626C008B4E91 /* DatePickerViewController.swift */,
+				E94A5E23212E629D008B4E91 /* DatePickerViewController.storyboard */,
+				E94A5E25212E699C008B4E91 /* Date+String.swift */,
 				E93D083E212D072B00AEC9B4 /* Main.storyboard */,
 				E93D0841212D072E00AEC9B4 /* Assets.xcassets */,
 				E93D0843212D072E00AEC9B4 /* LaunchScreen.storyboard */,
@@ -83,6 +89,7 @@
 				E93D0833212D072B00AEC9B4 /* Sources */,
 				E93D0834212D072B00AEC9B4 /* Frameworks */,
 				E93D0835212D072B00AEC9B4 /* Resources */,
+				E94A5E27212E6B12008B4E91 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -132,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E93D0845212D072E00AEC9B4 /* LaunchScreen.storyboard in Resources */,
+				E94A5E24212E629D008B4E91 /* DatePickerViewController.storyboard in Resources */,
 				E93D0842212D072E00AEC9B4 /* Assets.xcassets in Resources */,
 				E93D0840212D072B00AEC9B4 /* Main.storyboard in Resources */,
 			);
@@ -139,15 +147,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E94A5E27212E6B12008B4E91 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E93D0833212D072B00AEC9B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E93D084F212D12DA00AEC9B4 /* ValidationTextField.swift in Sources */,
+				E94A5E22212E626C008B4E91 /* DatePickerViewController.swift in Sources */,
+				E94A5E26212E699C008B4E91 /* Date+String.swift in Sources */,
 				E93D084D212D11C400AEC9B4 /* RegisterViewController.swift in Sources */,
 				E93D083D212D072B00AEC9B4 /* LoginViewController.swift in Sources */,
-				E93D0851212D136400AEC9B4 /* UIValidatedTextField.swift in Sources */,
 				E93D083B212D072B00AEC9B4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

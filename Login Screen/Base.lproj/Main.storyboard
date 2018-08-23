@@ -203,6 +203,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4E-Eh-31T">
                                                         <rect key="frame" x="0.0" y="26" width="327" height="30"/>
                                                         <state key="normal" title="Select a Date"/>
+                                                        <connections>
+                                                            <action selector="pressBirthday:" destination="h6J-wa-QTJ" eventType="touchUpInside" id="6Dk-yT-O16"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
