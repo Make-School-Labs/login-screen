@@ -10,6 +10,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    func loginUser(username: String, password: String) {
+        //TODO: login user
+    }
+    
     @IBOutlet weak var textFieldUsername: ValidationTextField! {
         didSet {
             textFieldUsername.resultValidations = [
@@ -17,6 +21,7 @@ class LoginViewController: UIViewController {
             ]
         }
     }
+    
     @IBOutlet weak var textFieldPassword: ValidationTextField! {
         didSet {
             textFieldPassword.resultValidations = [
@@ -26,7 +31,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func pressLogin(_ sender: Any) {
+        guard
+            textFieldUsername.textFieldHasValidInput,
+            textFieldPassword.textFieldHasValidInput else {
+                return
+        }
         
+        guard
+            let username = textFieldUsername.text,
+            let password = textFieldPassword.text else {
+                return
+        }
+        
+        loginUser(username: username, password: password)
     }
     
     @IBAction func unwindToLogin(_ segue: UIStoryboardSegue) {
