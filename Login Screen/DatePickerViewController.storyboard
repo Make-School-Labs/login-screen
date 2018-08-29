@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoJ-ny-M6Y">
-                                <rect key="frame" x="24" y="150" width="327" height="387.5"/>
+                                <rect key="frame" x="24" y="136" width="327" height="416.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kwK-7y-Y8l">
-                                        <rect key="frame" x="8" y="24" width="311" height="355.5"/>
+                                        <rect key="frame" x="8" y="24" width="311" height="384.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C2f-f7-m2S">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="57.5"/>
@@ -52,11 +52,18 @@
                                                 </connections>
                                             </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3r-v8-mth">
-                                                <rect key="frame" x="0.0" y="305.5" width="311" height="50"/>
-                                                <inset key="contentEdgeInsets" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
+                                                <rect key="frame" x="0.0" y="305.5" width="311" height="33"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <state key="normal" title="Done"/>
                                                 <connections>
                                                     <action selector="pressDone:" destination="Yrr-qf-aNf" eventType="touchUpInside" id="Rc0-FZ-NuJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzU-YD-Mn5">
+                                                <rect key="frame" x="0.0" y="354.5" width="311" height="30"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="pressCancel:" destination="Yrr-qf-aNf" eventType="touchUpInside" id="xSb-6E-xMA"/>
                                                 </connections>
                                             </button>
                                         </subviews>

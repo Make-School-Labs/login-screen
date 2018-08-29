@@ -62,6 +62,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                         <connections>
+                                                            <outlet property="nextResponderToBecomeResponder" destination="dq8-Yd-Ja4" id="Jk1-0j-IAd"/>
                                                             <outlet property="textFieldValidationDelegate" destination="BYZ-38-t0r" id="Zai-HP-nvB"/>
                                                         </connections>
                                                     </textField>
@@ -110,6 +111,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Wad-E5-1jj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="0El-Ue-UZc"/>
                             <constraint firstItem="Wad-E5-1jj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="T37-zh-5d6"/>
@@ -118,6 +120,9 @@
                             <constraint firstItem="R5x-eg-mUA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="zdk-Qb-x2f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4pT-bz-nZp" appends="YES" id="TLD-ZM-Kry"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="textFieldPassword" destination="r9V-g6-AKa" id="dyE-38-h7V"/>
@@ -125,6 +130,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4pT-bz-nZp">
+                    <connections>
+                        <action selector="tapToDismissKeyboard:" destination="BYZ-38-t0r" id="6Hh-uF-PvL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="183" y="35"/>
         </scene>

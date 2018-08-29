@@ -164,4 +164,8 @@ extension RegisterViewController: DatePickerViewControllerDelegate {
             return (false, "you cannot register being yonger than 18 years of age")
         }
     }
+    
+    func datePickerDidCancel(_ datePickerViewController: DatePickerViewController) {
+        self.dismiss(animated: true)
+    }
 }

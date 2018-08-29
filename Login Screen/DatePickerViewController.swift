@@ -19,6 +19,9 @@ protocol DatePickerViewControllerDelegate: class {
         canSelect
         date: Date
         ) -> (success: Bool, message: String)
+    
+    func datePickerDidCancel(
+        _ datePickerViewController: DatePickerViewController)
 }
 
 class DatePickerViewController: UIViewController {
@@ -75,6 +78,12 @@ class DatePickerViewController: UIViewController {
             
             present(dateInvalidAlert, animated: true)
         }
+    }
+    
+    @IBAction func pressCancel(_ sender: Any) {
+        guard let delegate = self.delegate else { return }
+        
+        delegate.datePickerDidCancel(self)
     }
     
     override func viewDidLoad() {

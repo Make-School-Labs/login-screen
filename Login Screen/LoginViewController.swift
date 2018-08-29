@@ -43,7 +43,14 @@ class LoginViewController: UIViewController {
                 return
         }
         
+        //dismiss keyboard
+        view.endEditing(false)
+        
         loginUser(username: username, password: password)
+    }
+    
+    @IBAction func tapToDismissKeyboard(_ sender: Any) {
+        view.endEditing(false)
     }
     
     @IBAction func unwindToLogin(_ segue: UIStoryboardSegue) {
