@@ -126,6 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="183" y="35"/>
         </scene>
         <!--Text Field Validation Delegate-->
         <scene sceneID="3lo-rl-DjU">
@@ -252,6 +253,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                         <connections>
+                                                            <outlet property="nextResponderToBecomeResponder" destination="Fkh-lE-yO4" id="pXs-tM-YIb"/>
                                                             <outlet property="textFieldValidationDelegate" destination="h6J-wa-QTJ" id="0pg-Ep-9oa"/>
                                                         </connections>
                                                     </textField>
@@ -289,6 +291,9 @@
                                     <constraint firstItem="qHY-HJ-e6v" firstAttribute="height" secondItem="Pfz-LS-7hO" secondAttribute="height" priority="750" id="o4P-aM-WAN"/>
                                     <constraint firstAttribute="bottom" secondItem="qHY-HJ-e6v" secondAttribute="bottom" id="pgd-kt-nFd"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="h6J-wa-QTJ" id="kIc-nt-147"/>
+                                </connections>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Create a New User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOi-gD-itw">
                                 <rect key="frame" x="83.000000000000014" y="68" width="209.33333333333337" height="31.333333333333329"/>
@@ -314,6 +319,7 @@
                     </view>
                     <connections>
                         <outlet property="buttonBirthdate" destination="s4E-Eh-31T" id="0fa-cT-BDy"/>
+                        <outlet property="scrollView" destination="Pfz-LS-7hO" id="Eeq-12-0TR"/>
                         <outlet property="textFieldFirstName" destination="h59-hT-TIZ" id="RSp-Ia-N5t"/>
                         <outlet property="textFieldLastName" destination="x20-8o-nT5" id="GVa-hc-hbd"/>
                         <outlet property="textFieldPassword" destination="Q4M-D4-qzR" id="cY3-lP-MdU"/>

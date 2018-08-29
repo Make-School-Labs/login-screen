@@ -10,13 +10,15 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    lazy var keyboardHelper = KeyboardHelper(delegate: self)
+    var keyboardHelper = KeyboardHelper()
     
     var selectedBirthday: Date?
     
     func registerNewUser(firstName: String, lastName: String, birthday: Date, password: String) {
         //TODO: register the user here
     }
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func tapToDismissKeyboard(_ sender: Any) {
         view.endEditing(false)
@@ -113,13 +115,29 @@ class RegisterViewController: UIViewController {
             ValidationTextField.Validations.equal(to: textFieldPassword)
         ]
         
-        _ = keyboardHelper
+        keyboardHelper.keyboardDidChangeAction = { [weak weakSelf = self] newPosition in
+            guard let unwrappedSelf = weakSelf else { return }
+            
+            unwrappedSelf.view.frame.origin.y = newPosition
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        view.endEditing(true)
     }
 }
 
-extension RegisterViewController: KeyboardHelperDelegate {
-    func keyboardHelper(_ keyboardHelper: KeyboardHelper, didChangeKeyboardTo newPosition: CGFloat) {
-        view.frame.origin.y = newPosition
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let yOffset = scrollView.convert(textField.frame.origin, from: textField.superview).y
+        let labelHeight: CGFloat = 36
+        scrollView.setContentOffset(CGPoint(x: 0, y: yOffset - labelHeight), animated: true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint.zero, animated: true)
     }
 }
 

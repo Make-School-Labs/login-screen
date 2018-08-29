@@ -130,6 +130,9 @@ extension ValidationTextField: UITextFieldDelegate {
             if let nextResponder = nextResponderToBecomeResponder {
                 if nextResponder.canBecomeFirstResponder {
                     nextResponder.becomeFirstResponder()
+                } else if let control = nextResponder as? UIControl {
+                    textField.resignFirstResponder()
+                    control.sendActions(for: .touchUpInside)
                 }
             } else {
                 textField.resignFirstResponder()

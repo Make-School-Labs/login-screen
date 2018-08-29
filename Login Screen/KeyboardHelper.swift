@@ -9,13 +9,19 @@
 import Foundation
 import UIKit.UIWindow
 
-protocol KeyboardHelperDelegate: class {
-    func keyboardHelper(_ keyboardHelper: KeyboardHelper, didChangeKeyboardTo newPosition: CGFloat)
-}
-
 class KeyboardHelper: NSObject {
     
-    unowned var delegate: KeyboardHelperDelegate
+    var keyboardDidChangeAction: ((CGFloat) -> Void)?
+    
+    private var keyboardHieght: CGFloat = 0
+    
+    override init() {
+        super.init()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -23,7 +29,15 @@ class KeyboardHelper: NSObject {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
-    @objc func keyboardWillChange(notification: Notification) {
+    func pushUp() {
+        
+    }
+    
+    func pushDown() {
+        
+    }
+    
+    @objc private func keyboardWillChange(notification: Notification) {
         print("Keyboard will show: \(notification.name.rawValue)")
         
         guard let keyboardRect = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
@@ -32,19 +46,9 @@ class KeyboardHelper: NSObject {
         
         if notification.name == Notification.Name.UIKeyboardWillShow ||
             notification.name == Notification.Name.UIKeyboardWillChangeFrame {
-            delegate.keyboardHelper(self, didChangeKeyboardTo: -keyboardRect.height + 64)
+            keyboardHieght = keyboardRect.height + 64
         } else {
-            delegate.keyboardHelper(self, didChangeKeyboardTo: 0)
+            keyboardHieght = 0
         }
-    }
-    
-    init(delegate: KeyboardHelperDelegate) {
-        self.delegate = delegate
-        
-        super.init()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
 }
