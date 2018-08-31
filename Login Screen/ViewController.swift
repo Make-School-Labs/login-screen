@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pressSignUp(_ sender: Any) {
-        
+        performSegue(withIdentifier: "show register", sender: nil)
     }
 }
 
