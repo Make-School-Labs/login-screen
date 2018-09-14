@@ -13,6 +13,7 @@
 		E93D0842212D072E00AEC9B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93D0841212D072E00AEC9B4 /* Assets.xcassets */; };
 		E93D0845212D072E00AEC9B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93D0843212D072E00AEC9B4 /* LaunchScreen.storyboard */; };
 		E9C2FA152139B47800490B16 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C2FA142139B47800490B16 /* RegisterViewController.swift */; };
+		E9C2FA172139ED8000490B16 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C2FA162139ED8000490B16 /* DatePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E93D0844212D072E00AEC9B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E93D0846212D072E00AEC9B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9C2FA142139B47800490B16 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E9C2FA162139ED8000490B16 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E93D083A212D072B00AEC9B4 /* AppDelegate.swift */,
 				E93D083C212D072B00AEC9B4 /* ViewController.swift */,
 				E9C2FA142139B47800490B16 /* RegisterViewController.swift */,
+				E9C2FA162139ED8000490B16 /* DatePickerViewController.swift */,
 				E93D083E212D072B00AEC9B4 /* Main.storyboard */,
 				E93D0841212D072E00AEC9B4 /* Assets.xcassets */,
 				E93D0843212D072E00AEC9B4 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C2FA172139ED8000490B16 /* DatePickerViewController.swift in Sources */,
 				E9C2FA152139B47800490B16 /* RegisterViewController.swift in Sources */,
 				E93D083D212D072B00AEC9B4 /* ViewController.swift in Sources */,
 				E93D083B212D072B00AEC9B4 /* AppDelegate.swift in Sources */,
