@@ -310,10 +310,16 @@
                                                 <rect key="frame" x="0.0" y="311" width="320" height="33"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="pressDone:" destination="YOc-gK-uAZ" eventType="touchUpInside" id="60h-S3-nwK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIc-3h-chZ">
                                                 <rect key="frame" x="0.0" y="360" width="320" height="30"/>
                                                 <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="pressCancel:" destination="YOc-gK-uAZ" eventType="touchUpInside" id="23I-iS-7hV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

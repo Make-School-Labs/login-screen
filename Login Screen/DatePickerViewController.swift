@@ -8,15 +8,21 @@
 
 import UIKit
 
+protocol DatePickerViewControllerDelegate: class {
+    func datePicker(_ datePickerViewController: DatePickerViewController, didFinishWith selectedDate: Date)
+}
+
 class DatePickerViewController: UIViewController {
+    
+    var delegate: DatePickerViewControllerDelegate?
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBAction func pressDone(sender: Any) {
-        
+    @IBAction func pressDone(_ sender: Any) {
+        delegate?.datePicker(self, didFinishWith: datePicker.date)
     }
     
-    @IBAction func pressCancel(sender: Any) {
+    @IBAction func pressCancel(_ sender: Any) {
         
     }
 
